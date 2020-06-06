@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Cadastro de usuários</string>
+    <string name="usuarioNome">Nome:</string>
+    <string name="usuarioCPF">CPF:</string>
+    <string name="usuarioEmpresa">Empresa:</string>
+    <string name="usuarioFuncao">Função:</string>
+    <string name="cadastro">Cadastre</string>
+    <string name="btnCadastrar">Cadastrar</string>
+    <string name="btnAtualizar">Atualizar</string>
+    <string name="btnDeletar">Deletar</string>
+    <string name="btnConsultar">Consultar</string>
+</resources>
