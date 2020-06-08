@@ -3,6 +3,7 @@ package com.example.usuariocadastro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnCadastrar;
     Button btnAtualizar;
     Button btnDeletar;
+    Button btnSelecionar;
     Button btnConsultar;
 
     EditText txtNome;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnAtualizar = findViewById(R.id.btnAtualizar);
         btnDeletar = findViewById(R.id.btnDeletar);
         btnConsultar = findViewById(R.id.btnConsultar);
+        btnSelecionar = findViewById(R.id.btnSelecionar);
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent objInt = new Intent(MainActivity.this, ListaUsuario.class);
                 startActivity(objInt);
+            }
+        });
+        btnSelecionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Selecionar();
             }
         });
 
@@ -113,6 +122,33 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             Toast.makeText(this, "Erro ao inserir usuário " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void Selecionar()
+    {
+        String Sql;
+
+        txtCPF = findViewById(R.id.txtCPF);
+
+        String usuarioCPF = txtCPF.getText().toString();
+
+        try {
+
+            bcoDados = openOrCreateDatabase("ETEC", MODE_PRIVATE, null);
+            Sql = "SELECT * FROM Usuario WHERE CPF='"+usuarioCPF+"'";
+
+            Cursor resultado = bcoDados.rawQuery(Sql, null);
+
+            while (resultado.moveToNext())
+            {
+                Toast.makeText(this, "Usuário: " + resultado.getString(1), Toast.LENGTH_LONG).show();
+            }
+
+            // bcoDados.execSQL(Sql);
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Erro ao procurar usuário: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

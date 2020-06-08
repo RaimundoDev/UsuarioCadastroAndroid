@@ -2,11 +2,11 @@ package com.example.usuariocadastro;
 
 public class Usuario {
 
-    Integer id;
-    String CPF;
-    String Nome;
-    String Empresa;
-    String Funcao;
+    private int id;
+    private String CPF;
+    private String Nome;
+    private String Empresa;
+    private String Funcao;
 
     public Integer getId() {
         return id;

@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cadastro"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:textSize="40dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -122,10 +121,18 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/btnSelecionar"
+        android:layout_gravity="center"
+        android:text="@string/btnSelecionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:id="@+id/btnConsultar"
         android:layout_gravity="center"
         android:text="@string/btnConsultar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

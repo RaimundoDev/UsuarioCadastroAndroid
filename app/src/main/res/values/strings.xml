@@ -8,5 +8,6 @@
     <string name="btnCadastrar">Cadastrar</string>
     <string name="btnAtualizar">Atualizar</string>
     <string name="btnDeletar">Deletar</string>
-    <string name="btnConsultar">Consultar</string>
+    <string name="btnConsultar">Consultar Todos</string>
+    <string name="btnSelecionar">Selecionar</string>
 </resources>
